@@ -108,5 +108,32 @@ CMAIN:
     neg rax ; has no effect on 0 value
     
     
+    ; - - A D D I T I O N / S U B T R A C T I O N   O P E R A T I O N S - - ;
+    
+    ; add/sub on registers
+    mov rax, 50 ; rax = 50
+    add rax, 10 ; rax + 10 = 60
+    sub rax, 30 ; rax - 30 = 30
+    
+    mov rbx, 40  ; rbx = 40
+    add rax, rbx ; rax + rbx = 70
+    mov rbx, 20  ; rbx = 20
+    sub rax, rbx ; rax - rbx = 50
+    
+    ; add/sub on memory
+    mov byte[value_a], 50
+    add byte[value_a], 10
+    sub byte[value_a], 30
+    
+    ; add/sub using registers and memory
+    mov al, 100
+    add [value_a], al
+    mov bl, 50
+    sub [value_a], bl
+    
+    ;--Rules--
+    ; cannot use raw values in destination operand
+    
+    
     xor rax, rax
     ret
